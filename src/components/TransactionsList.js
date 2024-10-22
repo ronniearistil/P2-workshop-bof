@@ -23,10 +23,19 @@ function TransactionsList({ transactions }) {
             <h3 className="ui center aligned header">Amount</h3>
           </th>
         </tr>
-        {mappedTransactions}
+        {mappedTransactions.length > 0 ? (
+          mappedTransactions
+        ) : (
+          <tr>
+            <td colSpan="4" className="ui center aligned">
+              No transactions found.
+            </td>
+          </tr>
+        )}
       </tbody>
     </table>
   );
 }
 
 export default TransactionsList;
+

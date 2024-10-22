@@ -1,12 +1,14 @@
-import React from "react";
+function Search({ onSearchChange }) {
+  const handleInputChange = (e) => {
+    onSearchChange(e.target.value);  // Update search term in parent component
+  };
 
-function Search() {
   return (
     <div className="ui large fluid icon input">
       <input
         type="text"
         placeholder="Search your Recent Transactions"
-        onChange={() => console.log("Searching...")}
+        onChange={handleInputChange}
       />
       <i className="circular search link icon"></i>
     </div>
@@ -14,3 +16,4 @@ function Search() {
 }
 
 export default Search;
+
